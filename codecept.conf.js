@@ -1,14 +1,15 @@
 exports.config = {
-  output: './output',
+  output: "./output",
   helpers: {
     Puppeteer: {
-      url: 'https://www.phptravels.net/',
+      url: "https://www.phptravels.net/",
       show: true,
-      windowSize: ''
-    }
+      windowSize: "1200x1200",
+    },
   },
   include: {
-    I: './steps_file.js'
+    I: "./steps_file.js",
+    loginPage: "./pages/loginPage.js",
   },
   mocha: {},
   bootstrap: null,
@@ -16,31 +17,32 @@ exports.config = {
   teardown: null,
   hooks: [],
   gherkin: {
-    features: './features/*.feature',
-    steps: ['./step_definitions/steps.js']
+    features: "./features/*.feature",
+    steps: ["./step_definitions/loginSteps.js"],
   },
   plugins: {
     screenshotOnFail: {
-      enabled: true
+      enabled: true,
     },
     pauseOnFail: {},
     retryFailedStep: {
-      enabled: true
+      enabled: true,
     },
     tryTo: {
-      enabled: true
-    }
+      enabled: true,
+    },
   },
   stepTimeout: 0,
-  stepTimeoutOverride: [{
-      pattern: 'wait.*',
-      timeout: 0
+  stepTimeoutOverride: [
+    {
+      pattern: "wait.*",
+      timeout: 0,
     },
     {
-      pattern: 'amOnPage',
-      timeout: 0
-    }
+      pattern: "amOnPage",
+      timeout: 0,
+    },
   ],
-  tests: './*_test.js',
-  name: 'FrameWorkPuppeteerBDD'
-}
+  tests: "./*_test.js",
+  name: "FrameWorkPuppeteerBDD",
+};
