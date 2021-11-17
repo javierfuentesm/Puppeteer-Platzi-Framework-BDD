@@ -9,7 +9,7 @@ Given(/^Im on logged in and Im the right page$/, function () {
   flightPage.validatePage();
 });
 When(
-  /^I fill in the search params with country from: "([^"]*)" , destination country: "([^"]*)", departure date : "([^"]*)" and passenger: "([^"]*)"$/,
+  /^I fill in the search params with country from: (.*) , destination country: (.*), departure date : (.*) and passenger: (.*)$/,
   function (from, destination, date, passengers) {
     flightPage.selectFlight(from, destination, date, passengers);
   }
