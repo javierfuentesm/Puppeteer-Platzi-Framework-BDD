@@ -1,4 +1,3 @@
-
 const { I } = inject();
 
 class LoginPage {
@@ -10,10 +9,10 @@ class LoginPage {
     this.loginPageText = "//h2[contains(text(),'Hi,')]";
   }
 
-  async visit() {
+  visit() {
     I.amOnPage("login");
     I.waitForElement(this.navBar);
-    I.seeInCurrentUrl('login');
+    I.seeInCurrentUrl("login");
   }
 
   login(email = "user@phptravels.com", password = "demouser") {
@@ -24,7 +23,7 @@ class LoginPage {
   }
 
   validateLogin() {
-    I.waitForElement(this.loginPageText);
+    I.waitForElement({ xpath: this.loginPageText }, 8);
     I.waitForElement(this.navBar);
   }
 }

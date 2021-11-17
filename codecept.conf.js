@@ -5,11 +5,14 @@ exports.config = {
       url: "https://www.phptravels.net/",
       show: true,
       windowSize: "1200x1200",
+      waitForNavigation: "networkidle2",
     },
   },
   include: {
     I: "./steps_file.js",
     loginPage: "./pages/loginPage.js",
+    flightPage: "./pages/flightPage.js",
+    navBarFragment: "./fragments/NavBar.js",
   },
   mocha: {},
   bootstrap: null,
@@ -18,7 +21,10 @@ exports.config = {
   hooks: [],
   gherkin: {
     features: "./features/*.feature",
-    steps: ["./step_definitions/loginSteps.js"],
+    steps: [
+      "./step_definitions/loginSteps.js",
+      "./step_definitions/flightSteps.js",
+    ],
   },
   plugins: {
     screenshotOnFail: {
@@ -26,6 +32,7 @@ exports.config = {
     },
     pauseOnFail: {},
     retryFailedStep: {
+      retries: 15,
       enabled: true,
     },
     tryTo: {

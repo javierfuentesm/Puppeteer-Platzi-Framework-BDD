@@ -1,7 +1,7 @@
 const { I, loginPage } = inject();
 
-Given("Im on the right page", async () => {
-  await loginPage.visit();
+Given("Im on the right page", () => {
+  loginPage.visit();
 });
 
 When(
