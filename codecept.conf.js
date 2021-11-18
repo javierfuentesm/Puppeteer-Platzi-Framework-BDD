@@ -38,6 +38,7 @@ exports.config = {
     tryTo: {
       enabled: true,
     },
+    allure: {},
   },
   stepTimeout: 0,
   stepTimeoutOverride: [
