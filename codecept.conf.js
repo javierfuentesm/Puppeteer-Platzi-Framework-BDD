@@ -39,6 +39,10 @@ exports.config = {
       enabled: true,
     },
     allure: {},
+    stepByStepReport: {
+      enabled: true,
+      screenshotsForAllureReport: true,
+    },
   },
   stepTimeout: 0,
   stepTimeoutOverride: [
