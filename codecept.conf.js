@@ -3,7 +3,7 @@ exports.config = {
   helpers: {
     Puppeteer: {
       url: "https://www.phptravels.net/",
-      show: true,
+      show: false,
       windowSize: "1200x1200",
       waitForNavigation: "networkidle2",
     },
